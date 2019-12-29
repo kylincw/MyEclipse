@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Mon Dec 09 08:10:40 CST 2019
+org.eclipse.jst.jee.server\:user=C\:\\Data\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\user
+org.eclipse.jst.jee.server\:10-EL=C\:\\Data\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\el
+org.eclipse.jst.jee.server\:Healthy_manager=C\:\\Data\\MyEclipse 2017 CI\\.metadata\\.me_tcat85\\webapps\\Healthy_manager

@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Dec 05 16:12:04 CST 2019
+org.eclipse.jst.jee.server\:09-Manager=C\:\\Software\\tomcat\\apache-tomcat-7.0.96\\webapps\\mg
+org.eclipse.jst.jee.server\:Healthy_manager=C\:\\Software\\tomcat\\apache-tomcat-7.0.96\\webapps\\Healthy_manager

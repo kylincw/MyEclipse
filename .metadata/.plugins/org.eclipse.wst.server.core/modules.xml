@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:05-Session" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:EL" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:12-Manager" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:07-ServletConfig" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:03-MyServlet" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:09-M" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:ajax" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:user" serverId="com.genuitec.embedded.tomcat.server.v85"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:test2" serverId="com.genuitec.embedded.tomcat.server.v85"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:14-Filter" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:04-Cookie" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:Healthy_manager" serverId="com.genuitec.embedded.tomcat.server.v85"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:04-Login" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:test" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:09-Manager" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:c1220191" serverId="com.genuitec.embedded.tomcat.server.v85"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:10-EL" serverId="com.genuitec.embedded.tomcat.server.v85"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:a" serverId="com.genuitec.embedded.tomcat.server.v85"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:mg" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:06-ServletContext" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:08-Jsp" serverId="Tomcat v7.0"/>
+  <module deployMode="EXPLODED" moduleId="org.eclipse.jst.jee.server:c122019" serverId="com.genuitec.embedded.tomcat.server.v85"/>
+</modules>

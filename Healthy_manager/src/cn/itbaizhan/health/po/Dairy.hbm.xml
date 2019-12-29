@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itbaizhan.health.po.Dairy">
+		
+		<id name="datetime" type="java.lang.String" length="20"/>
+		<property name="text" type="java.lang.String" length="2000"/>
+		<property name="sleephour" type="java.lang.Double" />
+		<property name="mood" type="java.lang.String" />
+		<property name="cigarette" type="java.lang.Integer" />
+		<property name="weight" type="java.lang.Double" />
+		<property name="pressure" type="java.lang.String" />
+		<property name="bpHigh" type="java.lang.Double" />
+		<property name="bpLow" type="java.lang.Double" />
+		<property name="bs" type="java.lang.Double" />
+
+		<many-to-one name="teacher" column="teacher_id"/>
+		<set name="food" table="dairy_food">
+			<key column="dairy_id"/>
+			<many-to-many column="food_id" class="cn.itbaizhan.health.po.Food" />
+		</set>	
+		<set name="active" table="dairy_active">
+			<key column="dairy_id"/>
+			<many-to-many column="active_id" class="cn.itbaizhan.health.po.Active" />
+		</set>	
+
+	</class>
+</hibernate-mapping>

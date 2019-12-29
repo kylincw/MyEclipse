@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itbaizhan.health.po.Exam">
+		<id name="id" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property name="datetime" type="timestamp" not-null="true" length="20"/>
+		<property name="sbp" type="java.lang.String" />
+		<property name="dbp" type="java.lang.String" />
+		<property name="bmi" type="java.lang.String" />
+		<property name="whr" type="java.lang.String" />
+		<property name="bun" type="java.lang.String" />
+		<property name="ua" type="java.lang.String" />
+		<property name="crea" type="java.lang.String" />
+		<property name="tg" type="java.lang.String" />
+		<property name="chol" type="java.lang.String" />
+		<property name="hdl" type="java.lang.String" />
+		<property name="ldl" type="java.lang.String" />
+		<property name="glu" type="java.lang.String" />
+		<property name="hcy" type="java.lang.String" />
+		<property name="m_alb" type="java.lang.String" />
+		<property name="m_alb_crea" type="java.lang.String" />
+
+		<many-to-one name="teacher" column="teacher_id"  class="cn.itbaizhan.health.po.Teacher"/>
+	</class>
+</hibernate-mapping>

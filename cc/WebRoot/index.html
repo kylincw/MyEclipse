@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/color.css">
+    <script type="text/javascript" src="easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript">
+        var url;
+        function newUser(){
+            $('#dlg').dialog('open').dialog('center').dialog('setTitle','添加用户信息');
+            $('#fm').form('clear');
+            url = 'indexHandle.jsp?flags=add';
+        }
+        function editUser(){
+            var row = $('#dg').datagrid('getSelected');
+            if (row){
+                $('#dlg').dialog('open').dialog('center').dialog('setTitle','用户信息修改');
+                $('#fm').form('load',row);
+                url = 'indexHandle.jsp?flags=amend&uuid='+row.uuid;
+            }
+        }
+        function saveUser(){
+            $('#fm').form('submit',{
+                url: url,
+                onSubmit: function(){
+                    return $(this).form('validate');
+                },
+                success: function(result){
+                    var result = eval('('+result+')');
+                    if (result.errorMsg){
+                        $.messager.show({
+                            title: 'Error',
+                            msg: result.errorMsg
+                        });
+                    } else {
+                        $('#dlg').dialog('close');        // close the dialog
+                        $('#dg').datagrid('reload');    // reload the user data
+                    }
+                }
+            });
+        }
+        function destroyUser(){
+        	var row =$("#dg").datagrid
+            var row = $('#dg').datagrid('getSelected');
+            if (row){
+                $.messager.confirm('操作确认','你确定要删除此条用户信息吗?',function(r){
+                    if (r){
+                        $.post('indexHandle.jsp?flags=delete',{uuid:row.uuid},function(result){
+                            if (result.success){
+                                $('#dg').datagrid('reload');    // reload the user data
+                            } else {
+                                $.messager.show({    // show error message
+                                    title: 'Error',
+                                    msg: result.errorMsg
+                                });
+                            }
+                        },'json');
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+	<!--用户数据表  -->
+    <table id="dg" title="用户信息"  class="easyui-datagrid" style="width:100%;height:400px"
+            url="indexHandle.jsp?flags=query"
+            toolbar="#toolbar" pagination="false"
+            rownumbers="true" fitColumns="true" singleSelect="true" >
+        <thead>
+            <tr>
+               <!--  <th field="uuid" width="50">Primary Key</th> -->
+                <th field="c0" width="25%">用户名</th>
+                <th field="c1" width="25%">密码</th>
+                <th field="c3" width="25%">Email</th>
+                <th field="c1" width="25%">电话</th>
+            </tr>
+        </thead>
+    </table>
+    <!-- 面板按钮 -->
+    <div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">添加信息</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">修改信息</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">删除信息</a>
+    </div>
+    
+    <!-- 用户信息的添加 -->
+    <div id="dlg" class="easyui-dialog" style="width:400px" data-options="closed:true,modal:true,border:'thin',buttons:'#dlg-buttons'">
+        <form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
+            <h3 align="center">用户信息</h3>
+            <div style="margin-bottom:10px">
+                <input name="c0" class="easyui-textbox" required="true" label="字段0 " style="width:100%">
+            </div>
+            <div style="margin-bottom:10px">
+                <input name="c1" class="easyui-textbox" required="true" label="字段1" style="width:100%">
+            </div>
+            <div style="margin-bottom:10px">
+                <input name="c3" class="easyui-textbox" required="true" validType="c33" label="Email:" style="width:100%">
+            </div>
+        </form>
+    </div>
+    
+    <!--确认取消按钮  -->
+    <div id="dlg-buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">确定</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>
+    </div>
+   
+</body>
+</html>

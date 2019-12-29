@@ -1,0 +1,9 @@
+[genuitec-file-id="wc1-212"],[genuitec-lp-path="/user/WebRoot/easyui/themes/material-teal/validatebox.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.validatebox-invalid {
+  border-color: #ffa8a8;
+  background-color: #fff;
+  color: #404040;
+}

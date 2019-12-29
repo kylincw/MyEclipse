@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Baidu Maps</title>
+		<style>
+			html { height: 100% }
+			body { height: 100%; margin: 0; padding: 0; background-color: #FFF }
+		</style>
+		<script charset="utf-8" src="http://api.map.baidu.com/api?v=1.3"></script>
+		<script>
+			var map, geocoder;
+			function initialize() {
+				map = new BMap.Map('map_canvas');
+				var point = new BMap.Point(121.473704, 31.230393);
+				map.centerAndZoom(point, 11);
+				map.addControl(new BMap.NavigationControl());
+				map.enableScrollWheelZoom();
+
+				var gc = new BMap.Geocoder();
+				gc.getLocation(point, function(rs){
+					var addComp = rs.addressComponents;
+					var address = [addComp.city].join('');
+					parent.document.getElementById("kindeditor_plugin_map_address").value = address;
+				});
+			}
+			function search(address) {
+				if (!map) return;
+				var local = new BMap.LocalSearch(map, {
+					renderOptions: {
+						map: map,
+						autoViewport: true,
+						selectFirstResult: false
+					}
+				});
+				local.search(address);
+			}
+		</script>
+	<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"5635",secure:"5644"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+	<body onload="initialize();" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc3-33" data-genuitec-path="/Healthy_manager/WebRoot/tool/kindeditor/plugins/baidumap/map.html">
+		<div id="map_canvas" style="width:100%; height:100%" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc3-33" data-genuitec-path="/Healthy_manager/WebRoot/tool/kindeditor/plugins/baidumap/map.html"></div>
+	</body>
+</html>

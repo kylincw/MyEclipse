@@ -1,0 +1,65 @@
+/* 表格位置居中 */
+#ta{
+     margin: 0px auto;
+     text-align:center;
+}
+
+/* 表格高度 */
+#ta tr{
+		height:50px;
+}
+
+/* 表格宽度 */
+#ta tr td{
+		width:150px;
+}
+/* 表格背景颜色 */
+#ta{
+		background-color: #f5f5f5;
+}
+
+*{
+    margin: 0px;
+     padding: 0px;
+     }
+        
+#div1{
+            margin: auto;
+            /*border: solid 1px red;*/
+            height: 200px;
+            width: 250px;
+            position: relative;
+     }
+#div2{
+        /*border: solid 1px blue;*/
+         position: absolute;
+         margin-top: 170px;
+         margin-left: 70px;
+        }
+/* 超链接外边距 */
+a{
+	padding: 2px;
+}
+
+/* 未访问的链接 */
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+
+/* 已访问的链接 */
+a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+ /* 当有鼠标悬停在链接上 */
+a:hover {
+	color: #F00;
+	text-decoration: underline;
+}
+ /* 被选择的链接 */
+a:active {
+	color: #F90;
+	text-decoration: underline;
+}

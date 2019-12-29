@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.itbaizhan.health.po.Manager">
+        <id name="id" type="java.lang.Integer">
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String" not-null="true" length="20"></property>
+        <property name="password" type="java.lang.String" not-null="true" length="20"></property>
+        
+        <set name="notice" order-by="datetime desc">
+			<key column="manager_id"/>
+			<one-to-many class="cn.itbaizhan.health.po.Notice" />
+		</set>
+        
+    </class>
+</hibernate-mapping>

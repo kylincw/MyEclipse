@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itbaizhan.health.po.Active">
+		<id name="id" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String" not-null="true" length="20"/>
+		<property name="heat" type="java.lang.Double" />
+		<property name="time" type="java.lang.Double" not-null="true" length="20"/>
+
+		 <set name="dairy" table="dairy_active" order-by="dairy_id desc">
+        	<key column="active_id"/>
+        	<many-to-many column="dairy_id"  class="cn.itbaizhan.health.po.Dairy"/>
+        </set>
+
+	</class>
+</hibernate-mapping>
